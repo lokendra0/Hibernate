@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+            version="2.2">
+
+<persistence-unit name="jpa-example">
+<!-- Specify the JPA provider (Hibernate) -->
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+<!-- Specify the JDBC driver, database URL, username, and password -->
+<properties>
+<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:testdb"/>
+<property name="javax.persistence.jdbc.user" value="sa"/>
+<property name="javax.persistence.jdbc.password" value=""/>
+
+<!-- Specify Hibernate dialect for H2 database -->
+<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+<!-- Automatically create database tables based on entity classes -->
+<property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+
+<!-- Show SQL statements in console -->
+<property name="hibernate.show_sql" value="true"/>
+</properties>
+</persistence-unit>
+</persistence>
